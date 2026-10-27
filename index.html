@@ -1,0 +1,227 @@
+<!doctype html>
+<html lang="fa" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#090b12">
+<title>امین جعفری | برنامه‌نویس و طراح</title>
+<style>
+:root{color-scheme:dark;--bg:#090b12;--panel:#101421;--panel2:#141a2a;--text:#f4f5ff;--muted:#a8aec8;--purple:#8b5cf6;--blue:#5267ff;--line:#272d43;--header:#090b12df;--card-grad:linear-gradient(145deg,#141a2a,#0e111b)}
+:root[data-theme="light"]{color-scheme:light;--bg:#f5f7ff;--panel:#fff;--panel2:#e9edfb;--text:#17182a;--muted:#59617a;--purple:#7545e8;--blue:#4055e8;--line:#dce1f1;--header:#f5f7ffdf;--card-grad:linear-gradient(145deg,#fff,#f0f2ff)}
+*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:radial-gradient(ellipse at 80% 0%,#20133c 0,transparent 34%),var(--bg);color:var(--text);font-family:Tahoma,Arial,sans-serif;line-height:1.9;transition:background-color .45s ease,color .35s ease}
+:root[data-theme="light"] body{background:radial-gradient(ellipse at 80% 0%,#e9ddff 0,transparent 36%),var(--bg)}
+:root[data-theme="light"] .eyebrow{color:#5b35a8}
+a{color:inherit;text-decoration:none}.wrap{width:min(1100px,92%);margin:auto}
+header{position:sticky;top:0;z-index:5;background:var(--header);backdrop-filter:blur(14px);border-bottom:1px solid color-mix(in srgb,var(--line) 55%,transparent);transition:background .35s,border-color .35s}
+.nav{height:74px;display:flex;align-items:center;justify-content:space-between;gap:16px}.brand{font-weight:800;font-size:1.1rem;display:flex;align-items:center;gap:10px}.logo{display:grid;place-items:center;width:38px;height:38px;border-radius:12px;background:linear-gradient(135deg,var(--purple),var(--blue));font-size:1.1rem}
+nav{display:flex;gap:23px;color:var(--muted);font-size:.9rem}nav a:hover,.muted-link:hover{color:var(--text)}.menu{display:none;background:var(--panel2);color:var(--text);border:1px solid var(--line);border-radius:10px;padding:7px 11px}
+.controls{display:flex;align-items:center;gap:9px}.control-btn{display:inline-flex;align-items:center;justify-content:center;gap:7px;min-height:40px;padding:7px 11px;border:1px solid var(--line);border-radius:12px;background:var(--panel);color:var(--text);font:inherit;font-size:.82rem;font-weight:700;cursor:pointer;transition:transform .2s,background .3s,border-color .3s;white-space:nowrap}.control-btn:hover{transform:translateY(-2px)}.control-btn:focus-visible,.btn:focus-visible,.menu:focus-visible{outline:2px solid var(--purple);outline-offset:3px}
+.theme-toggle{width:74px;justify-content:space-between;padding:5px 7px;border-radius:30px;position:relative;overflow:hidden}.toggle-track{position:absolute;inset:4px;border-radius:30px;background:linear-gradient(100deg,#202943,#3b4774);transition:background .4s}.toggle-knob{position:relative;z-index:1;display:grid;place-items:center;width:29px;height:29px;border-radius:50%;background:linear-gradient(135deg,#f8d879,#f4a340);color:#51360c;box-shadow:0 2px 10px #0003;transform:translateX(0);transition:transform .45s cubic-bezier(.2,.8,.2,1),background .4s,color .4s}.toggle-sun,.toggle-moon{position:relative;z-index:1;font-size:13px;line-height:1}.theme-toggle[aria-pressed="true"] .toggle-knob{transform:translateX(-32px);background:linear-gradient(135deg,#e6eaff,#a9b7ff);color:#29366e}.theme-toggle[aria-pressed="true"] .toggle-track{background:linear-gradient(100deg,#a7b5ff,#d9defc)}
+.hero{padding:100px 0 80px;min-height:570px;display:flex;align-items:center}.hero-inner{max-width:790px}.eyebrow{display:inline-flex;align-items:center;gap:8px;border:1px solid #8b5cf655;background:#8b5cf614;color:#c7b7ff;padding:6px 13px;border-radius:30px;font-size:.88rem}
+h1{font-size:clamp(2.4rem,6vw,4.5rem);line-height:1.35;margin:18px 0 8px;letter-spacing:-1.5px}h1 span{background:linear-gradient(90deg,#a78bfa,#7187ff);background-clip:text;color:transparent}
+.roles{font-size:1.15rem;color:var(--text);margin:0 0 18px}.intro{max-width:650px;color:var(--muted);font-size:1.02rem}
+.actions{display:flex;flex-wrap:wrap;gap:12px;margin-top:27px}.btn{display:inline-flex;align-items:center;justify-content:center;gap:9px;padding:11px 20px;border-radius:13px;border:1px solid var(--line);font-weight:700;transition:transform .2s,background .3s,color .3s}.btn.primary{background:linear-gradient(120deg,var(--purple),var(--blue));color:white;border:0;box-shadow:0 9px 30px #635bff30}.btn:hover{transform:translateY(-2px)}.btn.secondary{background:color-mix(in srgb,var(--panel) 70%,transparent)}
+.quick{display:flex;flex-wrap:wrap;gap:10px;margin-top:28px}.pill{border:1px solid var(--line);border-radius:30px;padding:5px 12px;color:var(--muted);font-size:.82rem}
+section{padding:70px 0;border-top:1px solid color-mix(in srgb,var(--line) 40%,transparent)}.section-head{margin-bottom:27px}.section-head small{color:var(--purple);font-weight:bold}.section-head h2{font-size:1.8rem;margin:5px 0}.section-head p{margin:0;color:var(--muted)}
+.about-grid{display:grid;grid-template-columns:1.2fr .8fr;gap:20px}.card{background:var(--card-grad);border:1px solid var(--line);border-radius:20px;padding:25px;transition:background .35s,border-color .35s,box-shadow .35s}.card p{color:var(--muted);margin-bottom:0}.stats{display:grid;grid-template-columns:repeat(2,1fr);gap:12px}.stat{background:color-mix(in srgb,var(--panel) 65%,transparent);border:1px solid var(--line);padding:18px;border-radius:15px}.stat strong{display:block;font-size:1.5rem;color:var(--purple)}.stat span{color:var(--muted);font-size:.85rem}
+.skills{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}.skill{background:var(--panel);border:1px solid var(--line);padding:18px;border-radius:16px;transition:background .35s,border-color .35s}.skill-top{display:flex;justify-content:space-between;gap:8px;font-weight:bold}.skill-top span:last-child{color:var(--purple);font-size:.85rem}.bar{height:7px;background:var(--panel2);border-radius:20px;overflow:hidden;margin-top:14px}.bar i{display:block;height:100%;background:linear-gradient(90deg,var(--purple),var(--blue));border-radius:20px}
+.projects{display:grid;grid-template-columns:repeat(3,1fr);gap:15px}.project-icon{width:45px;height:45px;display:grid;place-items:center;background:color-mix(in srgb,var(--purple) 12%,transparent);border:1px solid color-mix(in srgb,var(--purple) 35%,transparent);border-radius:14px;font-size:1.35rem}.project h3{margin:14px 0 5px}.project p{font-size:.9rem;color:var(--muted)}.tags{display:flex;flex-wrap:wrap;gap:7px;margin-top:15px}.tags span{font-size:.75rem;color:var(--purple);background:color-mix(in srgb,var(--purple) 10%,transparent);border-radius:7px;padding:3px 8px}
+.contact-grid{display:grid;grid-template-columns:1fr 1fr;gap:15px}.contact-item{display:flex;align-items:center;gap:14px;padding:18px;background:var(--panel);border:1px solid var(--line);border-radius:16px;min-width:0;transition:background .35s,border-color .35s}.contact-icon{width:43px;height:43px;display:grid;place-items:center;background:color-mix(in srgb,var(--purple) 12%,transparent);border-radius:13px;font-size:1.2rem}.contact-item small{display:block;color:var(--muted)}.contact-item strong{overflow-wrap:anywhere}
+footer{padding:25px 0;color:var(--muted);font-size:.85rem}.footer-inner{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap}
+@media(max-width:900px){.nav{gap:10px}.controls{gap:6px}.control-btn{padding:6px 8px}.lang-label{display:none}nav{gap:13px}}
+@media(max-width:760px){nav{display:none;position:absolute;top:73px;right:4%;left:4%;padding:18px;background:var(--panel);border:1px solid var(--line);border-radius:15px;flex-direction:column;gap:10px}nav.open{display:flex}.menu{display:block}.nav{height:74px}.hero{padding:75px 0 60px;min-height:unset}.about-grid{grid-template-columns:1fr}.skills{grid-template-columns:repeat(2,1fr)}.projects{grid-template-columns:1fr}.contact-grid{grid-template-columns:1fr}.brand-name{display:none}}
+@media(max-width:430px){.skills{grid-template-columns:1fr}h1{font-size:2.45rem}.card{padding:19px}.controls{gap:5px}.control-btn{min-height:38px;padding:5px 7px}.theme-toggle{width:68px}.theme-toggle[aria-pressed="true"] .toggle-knob{transform:translateX(-26px)}.lang-btn{font-size:.76rem}}
+@media(prefers-reduced-motion:reduce){*,*::before,*::after{scroll-behavior:auto!important;transition:none!important;animation:none!important}}
+
+/* Premium visual enhancements */
+html{scroll-behavior:smooth;scroll-padding-top:88px}
+body{overflow-x:hidden}
+body::before,body::after{content:"";position:fixed;z-index:-1;pointer-events:none;width:340px;height:340px;border-radius:50%;filter:blur(88px);opacity:.13;animation:ambientDrift 18s ease-in-out infinite alternate}
+body::before{top:14%;left:-190px;background:var(--purple)}body::after{right:-190px;bottom:7%;background:var(--blue);animation-delay:-8s}
+@keyframes ambientDrift{from{transform:translate3d(0,-14px,0) scale(.92)}to{transform:translate3d(28px,24px,0) scale(1.1)}}
+html{scroll-padding-top:90px}
+.scroll-progress{position:fixed;z-index:100;top:0;left:0;width:100%;height:3px;pointer-events:none}.scroll-progress span{display:block;width:0;height:100%;background:linear-gradient(90deg,var(--purple),#55d6ff);box-shadow:0 0 12px #8b5cf688}
+.hero{position:relative;isolation:isolate}.hero::after{content:"✦";position:absolute;z-index:-1;left:7%;top:19%;font-size:clamp(6rem,15vw,12rem);line-height:1;color:var(--purple);opacity:.07;transform:rotate(-12deg);animation:floatStar 6s ease-in-out infinite}
+@keyframes floatStar{0%,100%{transform:translateY(0) rotate(-12deg)}50%{transform:translateY(-15px) rotate(4deg)}}
+.card,.skill,.contact-item,.stat{transition:transform .28s ease,border-color .28s ease,box-shadow .28s ease,background .35s}
+.card:hover,.skill:hover,.contact-item:hover,.stat:hover{transform:translateY(-5px);border-color:var(--purple);box-shadow:0 16px 38px #00000014}
+.project{position:relative;overflow:hidden}.project::after{content:"";position:absolute;right:-45px;bottom:-65px;width:140px;height:140px;border-radius:50%;background:var(--purple);opacity:.08;filter:blur(25px);pointer-events:none}.project-icon{transition:transform .3s ease}.project:hover .project-icon{transform:rotate(-7deg) scale(1.08)}
+.reveal{opacity:0;transform:translateY(18px);transition:opacity .65s ease,transform .65s cubic-bezier(.2,.7,.2,1)}.reveal.is-visible{opacity:1;transform:translateY(0)}
+.bar i{width:0!important;transition:width 1.1s cubic-bezier(.2,.75,.25,1)}.skill.is-visible .bar i{width:var(--skill-width)!important}
+.back-to-top{position:fixed;z-index:90;bottom:22px;right:22px;width:46px;height:46px;border:1px solid var(--line);border-radius:15px;background:var(--panel);color:var(--text);box-shadow:0 8px 25px #0002;cursor:pointer;font:inherit;font-size:1.25rem;opacity:0;visibility:hidden;transform:translateY(8px);transition:opacity .25s,transform .25s,visibility .25s,background .3s}.back-to-top.visible{opacity:1;visibility:visible;transform:translateY(0)}.back-to-top:hover{background:var(--panel2);border-color:var(--purple)}
+@media(max-width:760px){.hero::after{left:0;top:12%;font-size:6rem;opacity:.05}.back-to-top{right:14px;bottom:14px;width:42px;height:42px}}
+@media(prefers-reduced-motion:reduce){body::before,body::after,.hero::after{animation:none!important}.reveal{opacity:1;transform:none;transition:none}.bar i{transition:none}}
+
+</style>
+</head>
+<body>
+<div class="scroll-progress" aria-hidden="true"><span id="scrollProgress"></span></div>
+<header><div class="wrap nav">
+  <a class="brand" href="#home"><span class="logo">AJ</span><span class="brand-name" data-i18n="brand">Amin Jafari</span></a>
+  <nav id="nav" aria-label="Main navigation">
+    <a href="#home" data-i18n="navHome">خانه</a><a href="#about" data-i18n="navAbout">درباره من</a><a href="#skills" data-i18n="navSkills">مهارت‌ها</a><a href="#projects" data-i18n="navProjects">پروژه‌ها</a><a href="#contact" data-i18n="navContact">تماس با من</a>
+  </nav>
+  <div class="controls">
+    <button class="control-btn lang-btn" id="langToggle" type="button" aria-label="Switch language" title="Switch language"><span>🌐</span><span class="lang-label" id="langLabel">English</span></button>
+    <button class="control-btn theme-toggle" id="themeToggle" type="button" aria-label="Switch to light theme" aria-pressed="false" title="Switch theme">
+      <span class="toggle-track"></span><span class="toggle-sun">☀</span><span class="toggle-knob" id="themeKnob">☀</span><span class="toggle-moon">☾</span>
+    </button>
+    <button class="menu" id="menu" aria-label="باز کردن منو" aria-expanded="false">☰</button>
+  </div>
+</div></header>
+<main>
+<section class="hero" id="home" style="border-top:0"><div class="wrap"><div class="hero-inner">
+  <div class="eyebrow" data-i18n="eyebrow">✦ برنامه‌نویس • خالق محتوا • طراح گرافیک</div>
+  <h1 data-i18n="heroTitle">سلام، من <span>امین جعفری</span> هستم.</h1>
+  <p class="roles" data-i18n="roles">۱۸ ساله، علاقه‌مند به تکنولوژی و ایده‌های خلاقانه</p>
+  <p class="intro" data-i18n="intro">من به ساخت تجربه‌های دیجیتال جذاب علاقه دارم؛ از طراحی و توسعه وب‌سایت تا تولید محتوا و طراحی گرافیک. هدفم این است که ایده‌ها را به تجربه‌هایی ساده، کاربردی و زیبا تبدیل کنم.</p>
+  <div class="actions"><a class="btn primary" href="#projects" data-i18n="heroProjects">مشاهده مهارت‌ها و پروژه‌ها <span>←</span></a><a class="btn secondary" href="#contact" data-i18n="heroContact">ارتباط با من</a></div>
+  <div class="quick"><span class="pill" data-i18n="pill1">کدنویسی تمیز</span><span class="pill" data-i18n="pill2">طراحی مدرن</span><span class="pill" data-i18n="pill3">تولید محتوای خلاق</span><span class="pill" data-i18n="pill4">یادگیری مداوم</span></div>
+</div></div></section>
+<section id="about"><div class="wrap"><div class="section-head reveal"><small data-i18n="aboutSmall">کمی درباره من</small><h2 data-i18n="aboutTitle">از ایده تا اجرا</h2><p data-i18n="aboutSub">ترکیب منطق، خلاقیت و یادگیری مداوم.</p></div>
+<div class="about-grid"><div class="card"><h3 data-i18n="aboutCardTitle">درباره امین</h3><p data-i18n="aboutText">من امین جعفری، برنامه‌نویس، تولیدکننده محتوا و طراح گرافیک ۱۸ ساله هستم. از کشف ابزارهای تازه و ساخت پروژه‌های کاربردی لذت می‌برم. در مسیر یادگیری، تلاش می‌کنم مهارت‌های فنی و خلاقانه‌ام را کنار هم به کار بگیرم و ایده‌ها را به نتیجه‌ای قابل استفاده تبدیل کنم.</p></div>
+<div class="stats"><div class="stat reveal"><strong>۳</strong><span data-i18n="stat1">حوزه فعالیت</span></div><div class="stat reveal"><strong>∞</strong><span data-i18n="stat2">ایده برای ساختن</span></div><div class="stat reveal"><strong data-i18n="stat3Value">Help</strong><span data-i18n="stat3">راهنمایی و کمک به مشتری</span></div><div class="stat reveal"><strong>Design</strong><span data-i18n="stat4">طراحی بصری</span></div></div></div>
+</div></section>
+<section id="skills"><div class="wrap"><div class="section-head reveal"><small data-i18n="skillsSmall">جعبه ابزار من</small><h2 data-i18n="skillsTitle">مهارت‌ها</h2><p data-i18n="skillsSub">درصدها نمونه نمایشی هستند و می‌توانند با سطح واقعی مهارت‌ها تنظیم شوند.</p></div>
+<div class="skills">
+<div class="skill reveal"><div class="skill-top"><span>HTML</span><span data-i18n="skillHtmlLevel">۹۰٪</span></div><div class="bar"><i style="--skill-width:90%"></i></div></div>
+<div class="skill reveal"><div class="skill-top"><span>CSS</span><span data-i18n="skillCssLevel">۸۵٪</span></div><div class="bar"><i style="--skill-width:85%"></i></div></div>
+<div class="skill reveal"><div class="skill-top"><span>JavaScript</span><span data-i18n="skillJsLevel">۷۵٪</span></div><div class="bar"><i style="--skill-width:75%"></i></div></div>
+<div class="skill reveal"><div class="skill-top"><span>Python</span><span data-i18n="skillPythonLevel">۶۵٪</span></div><div class="bar"><i style="--skill-width:65%"></i></div></div>
+<div class="skill reveal"><div class="skill-top"><span data-i18n="skillDesign">طراحی گرافیک</span><span data-i18n="skillDesignLevel">۸۰٪</span></div><div class="bar"><i style="--skill-width:80%"></i></div></div>
+<div class="skill reveal"><div class="skill-top"><span data-i18n="skillContent">تولید محتوا</span><span data-i18n="skillContentLevel">۸۵٪</span></div><div class="bar"><i style="--skill-width:85%"></i></div></div>
+</div></div></section>
+<section id="projects"><div class="wrap"><div class="section-head reveal"><small data-i18n="projectsSmall">چیزهایی که می‌سازم</small><h2 data-i18n="projectsTitle">حوزه‌های کاری و پروژه‌ها</h2><p data-i18n="projectsSub">این کارت‌ها فعلاً نمونه هستند؛ می‌توانی بعداً پروژه‌های واقعی خودت را جایگزین کنی.</p></div>
+<div class="projects">
+<article class="card project reveal"><div class="project-icon">⌘</div><h3 data-i18n="project1Title">طراحی و توسعه وب</h3><p data-i18n="project1Text">ساخت صفحات واکنش‌گرا با HTML، CSS و JavaScript با تمرکز بر تجربه کاربری.</p><div class="tags"><span>HTML</span><span>CSS</span><span>JavaScript</span></div></article>
+<article class="card project reveal"><div class="project-icon">✦</div><h3 data-i18n="project2Title">طراحی گرافیک</h3><p data-i18n="project2Text">طراحی هویت بصری، پست شبکه‌های اجتماعی و محتوای تصویری هماهنگ با برند.</p><div class="tags"><span>Visual Design</span><span>Branding</span></div></article>
+<article class="card project reveal"><div class="project-icon">▶</div><h3 data-i18n="project3Title">تولید محتوا</h3><p data-i18n="project3Text">ایده‌پردازی و آماده‌سازی محتوای دیجیتال برای آموزش، معرفی و تعامل با مخاطب.</p><div class="tags"><span>Content</span><span>Storytelling</span></div></article>
+</div></div></section>
+<section id="contact"><div class="wrap"><div class="section-head reveal"><small data-i18n="contactSmall">در تماس باشیم</small><h2 data-i18n="contactTitle">راه‌های ارتباطی</h2><p data-i18n="contactSub">برای همکاری، پروژه یا گفت‌وگو درباره ایده‌ها از راه‌های زیر پیام بده.</p></div>
+<div class="contact-grid">
+<a class="contact-item reveal" href="mailto:aminjafari065@gmail.com"><span class="contact-icon">✉</span><span><small data-i18n="emailLabel">ایمیل</small><strong>aminjafari065@gmail.com</strong></span></a>
+<a class="contact-item reveal" href="tel:09016687376"><span class="contact-icon">☎</span><span><small data-i18n="phoneLabel">شماره تماس</small><strong dir="ltr">09016687376</strong></span></a>
+</div>
+<div class="actions"><a class="btn primary" href="mailto:aminjafari065@gmail.com?subject=%D9%87%D9%85%DA%A9%D8%A7%D8%B1%DB%8C" data-i18n="sendEmail">ارسال ایمیل <span>↗</span></a><a class="btn secondary" href="tel:09016687376" data-i18n="callPhone">تماس تلفنی</a></div>
+</div></section>
+</main>
+<footer><div class="wrap footer-inner"><span data-i18n="footerCopy">© امین جعفری — تمامی حقوق محفوظ است.</span><span data-i18n="footerMade">ساخته‌شده با علاقه به کد و خلاقیت ✦</span></div></footer>
+<button class="back-to-top" id="backToTop" type="button" aria-label="بازگشت به بالای صفحه" title="بازگشت به بالا">↑</button>
+<script>
+const menu = document.getElementById('menu');
+const nav = document.getElementById('nav');
+const langToggle = document.getElementById('langToggle');
+const langLabel = document.getElementById('langLabel');
+const themeToggle = document.getElementById('themeToggle');
+const themeKnob = document.getElementById('themeKnob');
+
+const translations = {
+  fa: {
+    brand:"Amin Jafari", navHome:"خانه", navAbout:"درباره من", navSkills:"مهارت‌ها", navProjects:"پروژه‌ها", navContact:"تماس با من",
+    eyebrow:"✦ برنامه‌نویس • خالق محتوا • طراح گرافیک", heroTitle:'سلام، من <span>امین جعفری</span> هستم.',
+    roles:"۱۸ ساله، علاقه‌مند به تکنولوژی و ایده‌های خلاقانه",
+    intro:"من به ساخت تجربه‌های دیجیتال جذاب علاقه دارم؛ از طراحی و توسعه وب‌سایت تا تولید محتوا و طراحی گرافیک. هدفم این است که ایده‌ها را به تجربه‌هایی ساده، کاربردی و زیبا تبدیل کنم.",
+    heroProjects:'مشاهده مهارت‌ها و پروژه‌ها <span>←</span>', heroContact:"ارتباط با من", pill1:"کدنویسی تمیز", pill2:"طراحی مدرن", pill3:"تولید محتوای خلاق", pill4:"یادگیری مداوم",
+    aboutSmall:"کمی درباره من", aboutTitle:"از ایده تا اجرا", aboutSub:"ترکیب منطق، خلاقیت و یادگیری مداوم.", aboutCardTitle:"درباره امین",
+    aboutText:"من امین جعفری، برنامه‌نویس، تولیدکننده محتوا و طراح گرافیک ۱۸ ساله هستم. از کشف ابزارهای تازه و ساخت پروژه‌های کاربردی لذت می‌برم. در مسیر یادگیری، تلاش می‌کنم مهارت‌های فنی و خلاقانه‌ام را کنار هم به کار بگیرم و ایده‌ها را به نتیجه‌ای قابل استفاده تبدیل کنم.",
+    stat1:"حوزه فعالیت", stat2:"ایده برای ساختن", stat3Value:"راهنما", stat3:"راهنمایی و کمک به مشتری", stat4:"طراحی بصری",
+    skillDesign:"طراحی گرافیک", skillContent:"تولید محتوا", skillHtmlLevel:"۹۰٪", skillCssLevel:"۸۵٪", skillJsLevel:"۷۵٪", skillPythonLevel:"۶۵٪", skillDesignLevel:"۸۰٪", skillContentLevel:"۸۵٪",
+    skillsSmall:"جعبه ابزار من", skillsTitle:"مهارت‌ها", skillsSub:"درصدها نمونه نمایشی هستند و می‌توانند با سطح واقعی مهارت‌ها تنظیم شوند.",
+    projectsSmall:"چیزهایی که می‌سازم", projectsTitle:"حوزه‌های کاری و پروژه‌ها", projectsSub:"این کارت‌ها فعلاً نمونه هستند؛ می‌توانی بعداً پروژه‌های واقعی خودت را جایگزین کنی.",
+    project1Title:"طراحی و توسعه وب", project1Text:"ساخت صفحات واکنش‌گرا با HTML، CSS و JavaScript با تمرکز بر تجربه کاربری.",
+    project2Title:"طراحی گرافیک", project2Text:"طراحی هویت بصری، پست شبکه‌های اجتماعی و محتوای تصویری هماهنگ با برند.",
+    project3Title:"تولید محتوا", project3Text:"ایده‌پردازی و آماده‌سازی محتوای دیجیتال برای آموزش، معرفی و تعامل با مخاطب.",
+    contactSmall:"در تماس باشیم", contactTitle:"راه‌های ارتباطی", contactSub:"برای همکاری، پروژه یا گفت‌وگو درباره ایده‌ها از راه‌های زیر پیام بده.",
+    emailLabel:"ایمیل", phoneLabel:"شماره تماس", sendEmail:'ارسال ایمیل <span>↗</span>', callPhone:"تماس تلفنی",
+    footerCopy:"© امین جعفری — تمامی حقوق محفوظ است.", footerMade:"ساخته‌شده با علاقه به کد و خلاقیت ✦",
+    menuLabel:"باز کردن منو", langButton:"English", themeLight:"تغییر به حالت روشن", themeDark:"تغییر به حالت تاریک"
+  },
+  en: {
+    brand:"Amin Jafari", navHome:"Home", navAbout:"About", navSkills:"Skills", navProjects:"Projects", navContact:"Contact",
+    eyebrow:"✦ Developer • Content Creator • Graphic Designer", heroTitle:'Hi, I’m <span>Amin Jafari</span>.',
+    roles:"18 years old, passionate about technology and creative ideas",
+    intro:"I enjoy creating engaging digital experiences—from website design and development to content creation and graphic design. My goal is to turn ideas into simple, useful, and beautiful experiences.",
+    heroProjects:'Explore skills & projects <span>→</span>', heroContact:"Contact me", pill1:"Clean code", pill2:"Modern design", pill3:"Creative content", pill4:"Continuous learning",
+    aboutSmall:"A LITTLE ABOUT ME", aboutTitle:"From Idea to Execution", aboutSub:"Combining logic, creativity, and continuous learning.", aboutCardTitle:"About Amin",
+    aboutText:"I’m Amin Jafari, an 18-year-old developer, content creator, and graphic designer. I enjoy discovering new tools and building useful projects. As I learn, I bring my technical and creative skills together to turn ideas into practical results.",
+    stat1:"Fields of work", stat2:"Ideas to build", stat3Value:"Support", stat3:"Customer Guidance & Support", stat4:"Visual design",
+    skillDesign:"Graphic Design", skillContent:"Content Creation", skillHtmlLevel:"90%", skillCssLevel:"85%", skillJsLevel:"75%", skillPythonLevel:"65%", skillDesignLevel:"80%", skillContentLevel:"85%",
+    skillsSmall:"MY TOOLKIT", skillsTitle:"Skills", skillsSub:"These percentages are examples and can be adjusted to reflect actual skill levels.",
+    projectsSmall:"WHAT I CREATE", projectsTitle:"Work & Projects", projectsSub:"These cards are examples for now; replace them with your real projects whenever you’re ready.",
+    project1Title:"Web Design & Development", project1Text:"Building responsive pages with HTML, CSS, and JavaScript, with a focus on user experience.",
+    project2Title:"Graphic Design", project2Text:"Creating visual identities, social media posts, and branded visual content.",
+    project3Title:"Content Creation", project3Text:"Developing ideas and digital content for education, introductions, and audience engagement.",
+    contactSmall:"LET’S CONNECT", contactTitle:"Get in Touch", contactSub:"Reach out using the options below for collaborations, projects, or a chat about ideas.",
+    emailLabel:"Email", phoneLabel:"Phone", sendEmail:'Send an email <span>↗</span>', callPhone:"Call me",
+    footerCopy:"© Amin Jafari — All rights reserved.", footerMade:"Made with a love for code and creativity ✦",
+    menuLabel:"Open menu", langButton:"فارسی", themeLight:"Switch to light theme", themeDark:"Switch to dark theme"
+  }
+};
+
+let currentLang = "fa";
+function setLanguage(lang) {
+  if (!translations[lang]) return;
+  currentLang = lang;
+  document.documentElement.lang = lang;
+  document.documentElement.dir = lang === "fa" ? "rtl" : "ltr";
+  document.querySelectorAll("[data-i18n]").forEach(el => {
+    const key = el.dataset.i18n;
+    if (translations[lang][key] !== undefined) el.innerHTML = translations[lang][key];
+  });
+  langLabel.textContent = translations[lang].langButton;
+  langToggle.title = lang === "fa" ? "تغییر زبان" : "Switch language";
+  document.title = lang === "fa" ? "امین جعفری | برنامه‌نویس و طراح" : "Amin Jafari | Developer & Designer";
+  langToggle.setAttribute("aria-label", lang === "fa" ? "Switch language to English" : "تغییر زبان به فارسی");
+  menu.setAttribute("aria-label", translations[lang].menuLabel);
+  updateThemeLabel();
+}
+function updateThemeLabel() {
+  const isLight = document.documentElement.dataset.theme === "light";
+  themeToggle.setAttribute("aria-pressed", String(isLight));
+  themeToggle.setAttribute("aria-label", translations[currentLang][isLight ? "themeDark" : "themeLight"]);
+  themeToggle.title = translations[currentLang][isLight ? "themeDark" : "themeLight"];
+  const themeColor = document.querySelector('meta[name="theme-color"]');
+  if (themeColor) themeColor.content = isLight ? "#f5f7ff" : "#090b12";
+  themeKnob.textContent = isLight ? "☾" : "☀";
+}
+langToggle.addEventListener("click", () => setLanguage(currentLang === "fa" ? "en" : "fa"));
+themeToggle.addEventListener("click", () => {
+  const next = document.documentElement.dataset.theme === "light" ? "dark" : "light";
+  document.documentElement.dataset.theme = next;
+  updateThemeLabel();
+});
+menu.addEventListener("click", () => {
+  const isOpen = nav.classList.toggle("open");
+  menu.setAttribute("aria-expanded", String(isOpen));
+});
+nav.querySelectorAll("a").forEach(a => a.addEventListener("click", () => {
+  nav.classList.remove("open");
+  menu.setAttribute("aria-expanded", "false");
+}));
+setLanguage("fa");
+updateThemeLabel();
+
+// Reading progress, reveal-on-scroll, animated skill bars, and back-to-top.
+const progressBar = document.getElementById('scrollProgress');
+const backToTop = document.getElementById('backToTop');
+function updateScrollUI(){
+  const root=document.documentElement;
+  const maxScroll=root.scrollHeight-root.clientHeight;
+  const progress=maxScroll>0?(root.scrollTop/maxScroll)*100:0;
+  if(progressBar) progressBar.style.width=`${Math.min(100,Math.max(0,progress))}%`;
+  if(backToTop) backToTop.classList.toggle('visible',root.scrollTop>420);
+}
+window.addEventListener('scroll',updateScrollUI,{passive:true});
+window.addEventListener('resize',updateScrollUI);
+if(backToTop) backToTop.addEventListener('click',()=>window.scrollTo({top:0,behavior:'smooth'}));
+const revealItems=document.querySelectorAll('.reveal');
+if('IntersectionObserver' in window&&!window.matchMedia('(prefers-reduced-motion: reduce)').matches){
+  const revealObserver=new IntersectionObserver(entries=>entries.forEach(entry=>{
+    if(entry.isIntersecting){entry.target.classList.add('is-visible');revealObserver.unobserve(entry.target);}
+  }),{threshold:0.12});
+  revealItems.forEach((item,index)=>{item.style.transitionDelay=`${(index%4)*65}ms`;revealObserver.observe(item);});
+}else{revealItems.forEach(item=>item.classList.add('is-visible'));}
+updateScrollUI();
+
+</script>
+</body></html>
